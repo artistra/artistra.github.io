@@ -42,7 +42,7 @@ export const template = {
 }
 
 export const seo = {
-	default_title: 'Junxi Chen | Computational Cognitive Neuroscience',
+	default_title: 'Junxi Chen',
 	default_description: 'Junxi Chen is a researcher in computational cognitive neuroscience, studying adaptive learning, uncertainty, reinforcement learning, and Bayesian cognitive models.',
 	default_image: '/favicon.svg',
 }
