@@ -16,26 +16,39 @@ const { elements } = Astro.props
         ? <>
         <h3 class='text-lg font-bold mb-2'>{element.title}</h3>
         <p>{element.description}</p>
-        </> : <>
-      <a
-        href={element.link as string}
-        class='block hover:text-accent transition-colors duration-200'
-        target='_blank'
-      >
-        <h3 class='text-lg font-bold mb-2'>{element.title}</h3>
-      </a>
-      <p class='text-base mb-2'>
-        <span class='font-medium'>Authors:</span>{' '}
-        <span
-          set:html={highlightAuthor(element.authors as string)}
-        />
-      </p>
-      <p class='text-sm mb-3'>
-        <span class='italic'>{element.journal}</span> •{' '}
-        {element.time}
-      </p>
-      <p>{element.abstract}</p>
-      </>
+        </> : (
+          <div class='card bg-base-200'>
+            <div class='card-body'>
+              <a
+                href={element.link as string}
+                class='block no-underline hover:text-accent transition-colors duration-200'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <h3 class='text-lg font-bold mb-2'>{element.title}</h3>
+              </a>
+              <p class='text-base mb-2'>
+                <span class='font-medium'>Authors:</span>{' '}
+                <span
+                  set:html={highlightAuthor(element.authors as string)}
+                />
+              </p>
+              <p class='text-sm mb-3'>
+                <span class='italic'>{element.journal}</span> •{' '}
+                {element.time}
+              </p>
+              {element.tags && element.tags.length > 0 && (
+                <div class='flex flex-wrap gap-2'>
+                  {element.tags.map((tag) => (
+                    <span class='btn btn-sm btn-accent theme-aware-accent-button cursor-text select-text'>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        )
     }
     {/* Uncomment this line to add a small border bottom for each element
     {index !== elements.length -1 && <hr class="mt-6 border-primary/40" />}  */}

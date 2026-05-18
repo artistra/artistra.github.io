@@ -1,31 +1,13 @@
 ---
-title: "The Discovery of Radium"
-date: "1902-12-26"
-tags: ["Physics", "Research"]
-excerpt: "An account of the discovery of radium and its properties."
+title: "When should we change our minds?"
+date: "2026-05-17"
+tags: ["Bayesian Inference", "Computational Psychiatry"]
+excerpt: "The intuition behind my Categorical Bayes Filter work."
 ---
 
-# The Discovery of Radium
+# **When should we change our minds?**
 
-The discovery of radium marked a significant milestone in the field of radioactivity research.
-
-## The Research Process
-
-In 1898, my husband Pierre and I discovered the element radium. This discovery was the result of years of research and experimentation. Radium is a highly radioactive element with remarkable properties...
-
-### Key Findings
-
-- Radium is highly radioactive
-- It produces luminescence
-- It has potential medical applications
-
-## Experimental Methods
-
-Our research involved:
-
-1. Processing uraninite ore
-2. Chemical separation techniques
-3. Precise measurements of radioactivity
+One of the basic problems of learning is deciding how much to trust new information.
 
 ### Technical Challenges
 

@@ -4,6 +4,7 @@ interface Props {
   listItems: {
     title: string;
     description: string;
+    link?: string;
   }[];
 }
 const {listTitle, listItems} = Astro.props
@@ -13,8 +14,25 @@ const {listTitle, listItems} = Astro.props
   {
     listItems.map((item) => (
       <div class="p-6 bg-base-200 rounded-xl text-base-content">
-        <h3 class="text-xl font-semibold mb-3">{item.title}</h3>
+        {item.link
+          ? (
+            <a href={item.link} class="block no-underline hover:text-accent transition-colors duration-200">
+              <h3 class="text-xl font-semibold mb-3">{item.title}</h3>
+            </a>
+          )
+          : <h3 class="text-xl font-semibold mb-3">{item.title}</h3>
+        }
         <p>{item.description}</p>
+        {item.link && (
+          <div class="card-actions justify-end mt-4">
+            <a
+              href={item.link}
+              class="btn btn-sm btn-accent theme-aware-accent-button"
+            >
+              Read More
+            </a>
+          </div>
+        )}
       </div>
     ))
   }

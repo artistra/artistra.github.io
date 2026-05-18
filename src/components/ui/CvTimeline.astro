@@ -31,12 +31,13 @@ const { elements, colored } = Astro.props
 					</svg>
 				</div>
 				<div
-					class={`${index % 2 === 0 ? 'timeline-start' : 'timeline-end'} mb-10 md:text-end`}
+					class={`${index % 2 === 0 ? 'timeline-start' : 'timeline-end'} mb-10 w-full md:text-end`}
 				>
 					<time class='font-mono italic'>{element.time}</time>
-					<div class='text-lg font-black'>{isExperience(element) ? element.title : element.degree}</div>
+					<div class='text-lg font-black whitespace-pre-line'>{isExperience(element) ? element.title : element.degree}</div>
 					<div>{element.description}</div>
 					<div>{isExperience(element) ? element.company : element.school}</div>
+					{element.department && <div>{element.department}</div>}
 					<div>{element.location}</div>
 				</div>
         <hr class:list={[{ 'bg-accent': colored }]} />

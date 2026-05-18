@@ -3,15 +3,11 @@ import Layout from '../layouts/Layout.astro'
 
 import { profile } from '@/settings'
 import { publications } from '@/data/cv'
-import ProfilePictures from '@/assets/profile_pictures.jpg'
 import Hero from '@/components/ui/Hero.astro'
 import Grid from '@/components/ui/Grid.astro'
 import ArticleList from '@/components/ui/ArticleList.astro'
 
-const { fullName, title, institute, research_areas } = profile
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const { fullName, title, intro, research_areas } = profile
 ---
 
 <Layout>
@@ -20,8 +16,7 @@ const { fullName, title, institute, research_areas } = profile
 		<Hero
 			fullName={fullName}
 			title={title}
-			institute={institute}
-			profilePicture={ProfilePictures}
+			intro={intro}
 		/>
 	</section>
 

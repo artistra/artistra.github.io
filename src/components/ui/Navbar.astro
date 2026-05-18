@@ -8,12 +8,12 @@ import { template } from '@/settings'
 
 const isBlogPopulated = await getCollection('blog').then(collection => collection.length > 0)
 
-const {fullName, title} = profile
+const {fullName, position, institute, location} = profile
 ---
 <aside
 	class='px-4 pt-4 h-screen w-[20rem] bg-base-200 text-base-content flex flex-col'
 >
-	<div class='flex flex-col my-8 justify-between h-full'>
+	<div class='flex flex-col mt-1 mb-8 justify-between h-full'>
 		<div>
 			<div class='flex justify-center items-center flex-col'>
 				<Image
@@ -21,7 +21,34 @@ const {fullName, title} = profile
 					src={ProfilePictures}
 					alt={`Profile picture of ${fullName}`}
 				/>
-				<h1 class="text-lg font-black mt-8 hidden lg:block">{title} <span>{fullName}</span></h1>
+				<div class='mt-8 hidden lg:flex flex-col items-center text-center'>
+					<h1 class='text-xl font-black'>{fullName}</h1>
+					{position && <p class='mt-2 text-[0.95rem]'>{position}</p>}
+					{institute && <p class='mt-1 text-[0.95rem]'>{institute}</p>}
+					{location && (
+						<p class='mt-1 flex items-center gap-1.5 text-[0.95rem]'>
+							<svg
+								xmlns='http://www.w3.org/2000/svg'
+								viewBox='0 0 24 24'
+								fill='none'
+								stroke-width='1.75'
+								class='size-4 stroke-current'
+							>
+								<path
+									stroke-linecap='round'
+									stroke-linejoin='round'
+									d='M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z'
+								/>
+								<path
+									stroke-linecap='round'
+									stroke-linejoin='round'
+									d='M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z'
+								/>
+							</svg>
+							<span>{location}</span>
+						</p>
+					)}
+				</div>
 			</div>
 			<div class='mx-4 mt-16'>
 				<ul class='space-y-4 menu grow shrink menu-md overflow-y-auto'>

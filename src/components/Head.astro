@@ -1,14 +1,30 @@
 ---
-import {template} from '@/settings'
+import { profile, social, template } from '@/settings'
 interface Props {
 	title: string
 	description: string
 	image: string
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site)
-
 const { title, description, image } = Astro.props
+const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url
+const socialImageURL = image ? new URL(image, Astro.url) : null
+const homepageURL = Astro.site ? new URL('/', Astro.site).href : template.website_url
+const sameAs = Object.values(social).filter((url) => (
+	url.startsWith('http') && url !== 'https://scholar.google.com/'
+))
+const personStructuredData = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: profile.fullName,
+	url: homepageURL,
+	jobTitle: profile.position,
+	affiliation: {
+		'@type': 'Organization',
+		name: profile.institute,
+	},
+	sameAs,
+}
 ---
 
 <meta charset='utf-8' />
@@ -33,17 +49,19 @@ const { title, description, image } = Astro.props
 
 <!-- Open Graph / Facebook -->
 <meta property='og:type' content='website' />
-<meta property='og:url' content={Astro.url} />
+<meta property='og:url' content={canonicalURL} />
 <meta property='og:title' content={title} />
 <meta property='og:description' content={description} />
-<meta property='og:image' content={new URL(image, Astro.url)} />
+{socialImageURL && <meta property='og:image' content={socialImageURL} />}
 
 <!-- Twitter -->
 <meta property='twitter:card' content='summary_large_image' />
-<meta property='twitter:url' content={Astro.url} />
+<meta property='twitter:url' content={canonicalURL} />
 <meta property='twitter:title' content={title} />
 <meta property='twitter:description' content={description} />
-<meta property='twitter:image' content={new URL(image, Astro.url)} />
+{socialImageURL && <meta property='twitter:image' content={socialImageURL} />}
+
+<script type='application/ld+json' set:html={JSON.stringify(personStructuredData)} />
 
 <!-- Theme selector scripts -->
 <script is:inline>

@@ -16,6 +16,10 @@ You can see Astro Academia at the following link: <a href="https://maiobarbero.g
 
 Fork this repository to create your new website starting from this template.
 
+## Customization Guide
+
+For a detailed step-by-step guide on editing profile info, CV content, blog posts, page sections, themes, images, and deployment-related settings, see [CUSTOMIZATION.md](./CUSTOMIZATION.md).
+
 ## How to Create a CV Using the `cv.ts` File
 
 The `cv.ts` file located in the `src/data/` directory is used to define the structure and content of your CV. This file exports an object containing various sections of your CV, such as education, experience, publications, and more.
