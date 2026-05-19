@@ -18,7 +18,7 @@ const totalPages = Math.ceil(ALL_PAPERS.length / PAPERS_PER_PAGE);
         ALL_PAPERS.map((paper) => (
           <div class="card bg-base-200">
             <div class="card-body">
-              <h2 class="card-title text-xl">
+              <h2 class="card-title text-2xl">
                 <a
                   href={template.base + paper.link}
                   class="no-underline hover:text-accent"
@@ -28,14 +28,23 @@ const totalPages = Math.ceil(ALL_PAPERS.length / PAPERS_PER_PAGE);
                   {paper.title}
                 </a>
               </h2>
-              <p class="text-base mb-2">
+              <p class="text-lg mb-2">
                 <span class="font-medium">Authors:</span>{" "}
                 <span set:html={highlightAuthor(paper.authors)} />
               </p>
-              <p class="text-sm mb-3">
+              <p class="text-base mb-3">
                 <span class="italic">{paper.journal}</span> • {paper.time}
               </p>
-              <p class="text-sm text-base-content/80">{paper.abstract}</p>
+              <p class="text-base text-base-content/80">{paper.preview || paper.abstract}</p>
+              {paper.abstract && (
+                <details class="group mt-4">
+                  <summary class="btn btn-sm btn-outline btn-accent cursor-pointer list-none">
+                    <span class="group-open:hidden">Show Abstract</span>
+                    <span class="hidden group-open:inline">Hide Abstract</span>
+                  </summary>
+                  <p class="mt-4 text-base text-base-content/80">{paper.abstract}</p>
+                </details>
+              )}
               <div class="card-actions justify-end mt-4">
                 <a
                   href={paper.link}
