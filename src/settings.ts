@@ -24,7 +24,7 @@ export const social = {
 	bluesky: 'https://bsky.app/profile/junxichen.bsky.social',
 	github: 'https://github.com/artistra',
 	gitlab: '',
-	scholar: 'https://scholar.google.com/',
+	scholar: 'https://scholar.google.com/citations?hl=en&user=gErPehoAAAAJ',
 	inspire: '',
 	arxiv: '',
 	orcid: 'https://orcid.org/0000-0002-1024-2914',
