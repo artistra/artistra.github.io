@@ -11,7 +11,7 @@ export const profile = {
 	],
 	research_areas: [
 		{ title: 'Computational Cognitive Science', description: 'Meta-Learning, Planning', field: 'psychology' },
-		{ title: 'Computational Psychiatry', description: 'Subtyping; Subjective Well-Being; Depression, Anxiety', field: 'psychology' }
+		{ title: 'Computational Psychiatry', description: 'Subtyping; Subjective Well-Being; Depression; Anxiety', field: 'psychology' }
 		// { title: 'Physics', description: 'Brief description of the research interest', field: 'physics' },
 	],
 }

@@ -1,7 +1,7 @@
 ---
 title: "When should we change our minds?"
 date: "2026-05-27"
-tags: ["Bayesian Inference", "Computational Psychiatry"]
+tags: ["Bayesian Inference", "Adaptive Learning"]
 excerpt: "The background and intuition behind my Categorical Bayes Filter work."
 ---
 
