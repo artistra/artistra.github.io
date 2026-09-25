@@ -1,12 +1,12 @@
 export const profile = {
 	fullName: 'Junxi Chen',
 	// title: '',
-	position: 'Postgraduate Associate at Yale',
+	position: 'PhD student at NYU',
 	institute: 'Department of Psychology',
-	location: 'New Haven, CT',
+	location: 'New York, NY',
 	author_name: 'Junxi Chen', // Author name to be highlighted in the papers section
 	intro: [
-		'I\'m an incoming PhD student in Psychology working with <a href="https://markkho.github.io/" target="_blank">Mark Ho</a> in the <a href="https://codec-lab.github.io/" target="_blank">Computation & Decision-Making Lab</a> at New York University.',
+		'I\'m a PhD student in Psychology working with <a href="https://markkho.github.io/" target="_blank">Mark Ho</a> in the <a href="https://codec-lab.github.io/" target="_blank">Computation & Decision-Making Lab</a> at New York University.',
 		'Before NYU, I worked as a research technician with <a href="https://rutledgelab.org/" target="_blank">Robb Rutledge</a> at Yale. I received my B.S. degrees in Computational Neuroscience and Mathematics from the University of Southern California, where I worked with <a href="https://piraylab.com" target="_blank">Payam Piray</a>.',
 	],
 	research_areas: [
@@ -18,7 +18,7 @@ export const profile = {
 
 // Set equal to an empty string to hide the icon that you don't want to display
 export const social = {
-	email: 'junxi.chen@yale.edu',
+	email: 'jc8951@nyu.edu',
 	linkedin: '',
 	x: '',
 	bluesky: 'https://bsky.app/profile/junxichen.bsky.social',

@@ -8,6 +8,7 @@ interface Props {
     authors?: string;
     journal: string;
     time: string;
+    status?: string;
     link?: string;
   }[];
 }
@@ -39,7 +40,8 @@ const {listTitle, listItems} = Astro.props
 							</p>
 						)}
 						<p>
-							{item.journal} • {item.time}
+							{item.journal} · {item.time}
+							{item.status && <> · {item.status}</>}
 						</p>
 					</div>
 				))

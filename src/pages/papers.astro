@@ -33,7 +33,8 @@ const totalPages = Math.ceil(ALL_PAPERS.length / PAPERS_PER_PAGE);
                 <span set:html={highlightAuthor(paper.authors)} />
               </p>
               <p class="text-base mb-3">
-                <span class="italic">{paper.journal}</span> • {paper.time}
+                <span class="italic">{paper.journal}</span> · {paper.time}
+                {paper.status && <> · {paper.status}</>}
               </p>
               <p class="text-base text-base-content/80">{paper.preview || paper.abstract}</p>
               {paper.abstract && (

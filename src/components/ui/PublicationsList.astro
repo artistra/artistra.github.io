@@ -34,8 +34,9 @@ const { elements } = Astro.props
                 />
               </p>
               <p class='text-sm mb-3'>
-                <span class='italic'>{element.journal}</span> •{' '}
+                <span class='italic'>{element.journal}</span> ·{' '}
                 {element.time}
+                {element.status && <> · {element.status}</>}
               </p>
               {element.tags && element.tags.length > 0 && (
                 <div class='flex flex-wrap gap-2'>

@@ -58,6 +58,7 @@ export const publications = [
 		authors: 'Junxi Chen, Payam Piray',
 		journal: 'bioRxiv',
 		time: '2026',
+		status: 'Accepted at NeurIPS 2026',
 		link: 'https://www.biorxiv.org/content/10.64898/2026.05.14.725268v1',
 		tags: ['Bayesian Inference', 'Computational Psychiatry'],
 		preview: 'Particle filters are widely used as cognitive models of latent-state inference, but their stochastic likelihoods and non-differentiable objectives make them difficult to fit reliably at the individual level. We introduce the Categorical Bayes Filter, a deterministic alternative for stable and interpretable cognitive modeling. We validate it in an adaptive learning task requiring joint inference over volatility and stochasticity, and show how it can characterize heterogeneity in human learning behavior.',

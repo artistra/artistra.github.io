@@ -33,13 +33,13 @@ const { page } = Astro.props
 				page.data.map(post => (
 					<article class='card bg-base-200 transition-all'>
 						<div class='card-body'>
-							<div class='flex justify-between items-start'>
+							<div class='flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3'>
 								<h2 class='card-title text-xl'>
                             <a href={post.slug} class='hover:text-accent'>
 										{post.title}
 									</a>
 								</h2>
-								<div class='badge badge-accent badge-outline p-4'>
+								<div class='badge badge-accent badge-outline p-4 self-start'>
 									{post.badge}
 								</div>
 							</div>
@@ -48,6 +48,7 @@ const { page } = Astro.props
 									year: 'numeric',
 									month: 'long',
 									day: 'numeric',
+									timeZone: 'UTC',
 								})}
 							</time>
 							<p class='mt-4'>{post.excerpt}</p>
@@ -65,9 +66,11 @@ const { page } = Astro.props
 			}
 		</div>
 
-		<div class='flex justify-center mt-8'>
-			<Pagination page={page} />
-		</div>
+		{page.lastPage > 1 && (
+			<div class='flex justify-center mt-8'>
+				<Pagination page={page} />
+			</div>
+		)}
     </div>
 
 </Layout>
